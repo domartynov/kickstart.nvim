@@ -83,5 +83,15 @@ return {
 
     -- Install golang specific config
     require('dap-go').setup()
+
+    vim.keymap.set('n', '<leader>dn', function () require("dap-go").debug_test() end, {desc = "Debug nearest test"})
+    vim.keymap.set('n', '<leader>dl', function ()
+      local dapgo = require("dap-go")
+      if dapgo.last_testname == "" then
+        dapgo.debug_test()
+      else
+        dapgo.debug_last_test()
+      end
+    end, {desc = "Debug last or nearest test"})
   end,
 }
