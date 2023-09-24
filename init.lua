@@ -72,6 +72,22 @@ require('lazy').setup({
   -- Detect tabstop and shiftwidth automatically
   'tpope/vim-sleuth',
 
+  {
+    'christoomey/vim-tmux-navigator',
+    lazy = false
+  },
+
+  -- GitHub plugin
+  {
+    'ldelossa/gh.nvim',
+    dependencies = {
+      'ldelossa/litee.nvim'
+    },
+    config = function()
+      require('litee.lib').setup()
+      require('litee.gh').setup()
+    end
+  },
   -- NOTE: This is where your plugins related to LSP can be installed.
   --  The configuration is done below. Search for lspconfig to find it below.
   {
@@ -212,6 +228,12 @@ require('lazy').setup({
       })
     end
   },
+  {
+    "almo7aya/openingh.nvim",
+    keys = {
+      { "<leader>gh", "<cmd>OpenInGHFileLines<cr>", desc = "Open in GitHub" },
+    }
+  },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
   --       These are some example plugins that I've included in the kickstart repository.
   --       Uncomment any of the lines below to enable them.
@@ -252,6 +274,9 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+
+-- Auto-save buffer
+vim.o.autowrite = true
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true
@@ -306,6 +331,9 @@ require('telescope').setup {
 
 -- Enable telescope fzf native, if installed
 pcall(require('telescope').load_extension, 'fzf')
+
+-- tmux-sessionizer
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
 -- See `:help telescope.builtin`
 vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
