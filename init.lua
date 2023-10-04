@@ -79,13 +79,14 @@ require('lazy').setup({
 
   -- GitHub plugin
   {
-    'ldelossa/gh.nvim',
+    'pwntester/octo.nvim',
     dependencies = {
-      'ldelossa/litee.nvim'
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'nvim-tree/nvim-web-devicons',
     },
     config = function()
-      require('litee.lib').setup()
-      require('litee.gh').setup()
+      require('octo').setup()
     end
   },
   -- NOTE: This is where your plugins related to LSP can be installed.
