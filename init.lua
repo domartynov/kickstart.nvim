@@ -207,18 +207,18 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-      "MunifTanjim/nui.nvim",
-    },
-    keys = {
-      { "<leader>ft", "<cmd>Neotree float reveal<cr>", desc = "NeoTree" },
-    },
-  },
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   branch = "v3.x",
+  --   dependencies = {
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
+  --     "MunifTanjim/nui.nvim",
+  --   },
+  --   keys = {
+  --     { "<leader>ft", "<cmd>Neotree float reveal<cr>", desc = "NeoTree" },
+  --   },
+  -- },
   {
     "kylechui/nvim-surround",
     version = "*", -- Use for stability; omit to use `main` branch for the latest features
