@@ -2,7 +2,7 @@
 
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
-===================================================================
+====================================================================
 
 Kickstart.nvim is *not* a distribution.
 
@@ -247,6 +247,7 @@ require('lazy').setup({
       { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Trouble Toggle document_diagnostics" },
       { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", desc = "Trouble Toggle quickfix" },
       { "<leader>xl", "<cmd>TroubleToggle loclist<cr>", desc = "Trouble Toggle loclist" },
+      { "gR", "<cmd>TroubleToggle lsp_references<cr>", desc = "Trouble Toggle lsp_references" },
     }
   },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
