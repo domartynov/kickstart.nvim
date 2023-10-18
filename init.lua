@@ -2,7 +2,7 @@
 
 =====================================================================
 ==================== READ THIS BEFORE CONTINUING ====================
-=====================================================================
+===================================================================
 
 Kickstart.nvim is *not* a distribution.
 
@@ -240,13 +240,13 @@ require('lazy').setup({
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    opts = { },
     keys = {
-      { "<leader>tr", "<cmd>TroubleToggle<cr>", desc = "Trouble Toggle" },
+      { "<leader>xx", "<cmd>TroubleToggle<cr>", desc = "Trouble Toggle" },
+      { "<leader>xw", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Trouble Toggle workspace_diagnostics" },
+      { "<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>", desc = "Trouble Toggle document_diagnostics" },
+      { "<leader>xq", "<cmd>TroubleToggle quickfix<cr>", desc = "Trouble Toggle quickfix" },
+      { "<leader>xl", "<cmd>TroubleToggle loclist<cr>", desc = "Trouble Toggle loclist" },
     }
   },
   -- NOTE: Next Step on Your Neovim Journey: Add/Configure additional "plugins" for kickstart
